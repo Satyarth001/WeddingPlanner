@@ -1,0 +1,891 @@
+:root {
+  --primary-color: #660000; /* Wedding theme */
+  --secondary-color: #fff;
+  --hover-color: #ffccd5;
+  --text-color: #fff;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--secondary-color);
+}
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--primary-color);
+  position: relative;
+}
+.logo a{
+            font-size: 24px;
+            font-family: 'Blackadder ITC', cursive;
+            color:white;
+            text-decoration: none;
+			font-weight:bold;
+        }
+.logo a:hover{
+	color: #ffccd5;
+}
+.login-btn a {
+    background: #660000;  /* Same as start button */
+    color: white;
+    
+    
+    cursor: pointer;
+    text-decoration: none;
+    
+    transition: 0.3s;
+    display: inline-block; /* Ensures proper spacing */
+    text-align: center;
+}
+
+.login-btn a:hover {
+    background: #ffccd5; /* Light pink hover effect */
+    color: black;
+}
+
+/* Centering the Navigation Bar */
+.nav-bar {
+    display: flex;
+    justify-content: center; /* Center the nav */
+    align-items: center;
+    gap: 20px; /* Space between items */
+    background: var(--primary-color);
+    padding: 15px 0;
+}
+
+/* Style for Links */
+.nav-bar a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-bar a:hover {
+    color: #ffccd5; /* Light hover effect */
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--primary-color);
+    min-width: 200px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    text-align: left;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .hamburger {
+      display: block;
+      position: absolute;
+      right: 30px;
+      top: 15px;
+  }
+
+  .nav-bar {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+      background: var(--primary-color);
+      padding: 15px;
+  }
+
+  .nav-bar.show {
+      display: flex;
+  }
+
+  .dropdown-content {
+      position: relative;
+      width: 100%;
+  }
+}
+
+/* General Styles */
+.container {
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Welcome Message */
+h2 {
+  color: #8c001a;
+  font-size: 2rem;
+}
+
+p.lead {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Countdown Text */
+#countdown {
+  color: #8c001a;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Progress Bar */
+.progress {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #e9ecef;
+  height: 20px;
+}
+
+.progress-bar {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 15px;
+  transition: width 0.6s ease-in-out;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 25px;
+}
+
+/* Budget Card */
+.bg-primary {
+  background-color: #8c001a !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+/* Icons */
+.card-title i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* Buttons */
+.btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-light {
+  background-color: white;
+  color: #8c001a;
+  border: 2px solid #8c001a;
+}
+
+.btn-light:hover {
+  background-color: #8c001a;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+
+  h2 {
+      font-size: 1.8rem;
+  }
+
+  .progress {
+      height: 15px;
+  }
+
+  .progress-bar {
+      font-size: 12px;
+  }
+}
+
+ .image-container {
+  position: relative;
+  display: inline-block;
+ }
+ .image-container img {
+  display: block;
+  width:100%;
+  height: 500px;
+  padding-left: 15px;
+ }
+ .text-overlay {
+  position: absolute;
+  bottom: 15px; /* Distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+ }
+ 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+h2{
+color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+font-family:Blackadder ITC;
+}
+.contact {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.banner {
+    position: relative;
+    width: 90%; /* Reduced width to create blank space around */
+    min-height: 80vh; /* Adjusted height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; /* Ensures video stays within rounded corners */
+    margin: 40px auto; /* Adds blank space around */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+/* Video Background */
+.banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px; /* Ensures video follows the rounded corners */
+}
+
+/* Banner Content */
+.banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+.banner-content h1{
+	font-family:Blackadder ITC;
+}
+.banner-content h2{
+	font-family: Bell MT;
+	font-size:20px;
+	padding-Bottom:15px;
+}
+/* Start Planning Button */
+.start-btn {
+    background:#660000;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: #ffccd5; /* Light pink hover effect */
+    color: black;
+}
+
+
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  color: #660000;
+  font-weight:bold;
+  margin-bottom: 20px;
+  position: relative;
+  animation: fadeInUp 1s ease-in-out;
+}
+.about-section strong{
+		 color: #660000;
+		 font-weight:bold;
+		 font-family:Blackadder ITC;
+}
+.about-intro {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.about-intro {
+	font-family:Bell TM;
+}
+.more-about-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #660000; /* Matching Start Button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.more-about-btn:hover {
+    background: #ffccd5; /* Light pink hover effect */
+    color: black;
+}
+
+/* Wedding Categories Section */
+.wedding-categories {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.wedding-categories h2 {
+  font-size: 32px;
+  color: #8c001a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Two-Column Grid Layout */
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Category Box */
+.category {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.category-info h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #8c001a;
+}
+
+.category-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.category-header img {
+  width: 200px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Dropdown Content */
+.dropdown-content-cat {
+  display: none;
+  background-color: #fdf2f2;
+  padding: 15px 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.dropdown-content-cat ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content-cat ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content-cat ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content-cat ul li:last-child {
+  border-bottom: none;
+}
+
+/* Show dropdown when active */
+.active {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-container {
+    grid-template-columns: 1fr;
+  }
+
+  .category-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .category-header img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+}
+
+/* General Styling */
+.plan-your-wedding {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, White,#1a0000);
+    font-family: 'Poppins', sans-serif;
+}
+.plan-your-wedding h2{
+	color:#660000;
+	font-weight:bold;
+	font-size:36px;
+}
+/* Container for Steps */
+.planning-steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Step Box Styling */
+.plan-step {
+    width: 230px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.plan-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 18px;
+    border-radius: 50%;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Icon Hover Animation */
+.plan-step:hover .icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Color Gradients for Icons */
+.purple { background: linear-gradient(45deg, #8e44ad, #c0392b); }
+.orange { background: linear-gradient(45deg, #e67e22, #f39c12); }
+.blue { background: linear-gradient(45deg, #3498db, #2ecc71); }
+.green { background: linear-gradient(45deg, #27ae60, #16a085); }
+.gold { background: linear-gradient(45deg, #f1c40f, #ff9800); }
+
+/* Step Headings */
+.plan-step h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+/* Step Descriptions */
+.plan-step p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Floating Background Effects */
+.plan-step::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.plan-step:hover::before {
+    width: 80px;
+    height: 80px;
+    opacity: 0.2;
+}
+.planning-steps a{
+	text-decoration:none;
+}
+
+/* Gallery Section */
+.gallery-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-section h2 {
+  font-size: 32px;
+  color: #8c001a;
+  margin-bottom: 20px;
+}
+
+/* Gallery Container */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Gallery Items */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay Effect */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsive Design
+@media (max-width: 768px) {
+  .gallery-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}*/
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+
+.review-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+.review-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #8c001a;
+  margin-bottom: 10px;
+}
+.review-section p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.view-more {
+  display: block;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.view-more a {
+  font-size: 20px;
+  color: black;
+  background-color: #8c001a;
+  padding: 5px 6px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.view-more a:hover {
+  text-decoration: underline;
+  background:#a13739;
+}
+.review-container {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 75px;
+  position: relative;
+}
+.review-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 1s ease-in-out;
+  text-align: left;
+  display: none;
+}
+.review-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.review-content {
+  padding: 15px;
+}
+.review-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+.review-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+
+#prev {
+left: 10px;
+}
+
+#next {
+right: 10px;
+}
+
+
+
+/* Footer General Styling */
+footer {
+  background-color: #660000;
+  color: white;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo a{
+            font-size: 24px;
+            font-family:Blackadder ITC;
+            color:white;
+            text-decoration: none;
+			font-weight:bold;
+        }
+.footer-logo a:hover{
+	color: #ffccd5;
+}
+
+/* Footer Links */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #FFD1B3;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #FFD1B3;
+}
+
+/* Footer Contact */
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: #FFD1B3;
+}
+
+/* Social Media Icons */
+.footer-social a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #FFD1B3;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #FFD1B3;
+  padding-top: 10px;
+  font-size: 14px;
+}

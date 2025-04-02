@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff5f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #8c001a;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Vendor Categories */
+.vendor-categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.vendor-categories a {
+    padding: 10px 15px;
+    background: #8c001a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.vendor-categories a:hover {
+    background: #6a0014;
+}
+
+/* Vendor List */
+.vendor-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Vendor Card */
+.vendor {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.vendor:hover {
+    transform: scale(1.05);
+}
+
+.vendor img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #8c001a;
+}
+
+.vendor h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.vendor p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.vendor i {
+    color: #8c001a;
+    margin-right: 5px;
+}
+
+.vendor button {
+    background: #8c001a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+.vendor button:hover {
+    background: #6a0014;
+}
+
+/* Vendor Detail Page */
+.vendor-detail {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.vendor-detail img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.vendor-detail p {
+    font-size: 16px;
+    color: #444;
+    margin: 10px 0;
+}
+
+.vendor-detail a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8c001a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.vendor-detail a:hover {
+    background: #6a0014;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vendor-list {
+        grid-template-columns: 1fr;
+    }
+}
